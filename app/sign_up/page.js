@@ -5,12 +5,31 @@ import Link from 'next/link'
 import { useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'
+import {PiWarningFill} from 'react-icons/pi';
 
 export default function SignUp() {
+  const [first_name,setFirst_name] = useState('');
+  const [last_name,setLast_name] = useState('');
+  const [email,setEmail] = useState('');
   const [phone_number,setPhone_number] = useState('');
+  const [age_range,setAge_range] = useState('');
+  const [gender,setGender] = useState('');
+  const [password,setPassword] = useState('');
+  const [validphone_number,setValidphone_number] = useState(false);
+  const [validpassword1,setValidpassword1] = useState(false);
+  const [validpassword2,setValidpassword2] = useState(false);
+
+
+
   function handleSubmit(e){
     e.preventDefault();
-    console.log(e.target);
+    console.log(first_name);
+    console.log(last_name);
+    console.log(email);
+    console.log(phone_number);
+    console.log(age_range);
+    console.log(gender);
+    console.log(password);
   }
 
   return (
@@ -57,37 +76,42 @@ export default function SignUp() {
         <div className='pt-5 flex justify-between gap-2'>
           <div className='flex-1'>
             <p className='text-left pb-1'>First Name</p>
-            <input className='w-full p-3 border border-txtinput rounded-[5px]' name='first_name' type='text' placeholder='Newton Adeola'/>
+            <input className='w-full p-3 border border-txtinput rounded-[5px]' name='first_name' value={first_name} onChange={(e)=>setFirst_name(e.target.value)} type='text' placeholder='Newton Adeola'/>
           </div>
 
           <div className='flex-1'>
             <p className='text-left pb-1'>Last Name</p>
-            <input className='w-full p-3 border border-txtinput rounded-[5px]' name='last_name' type='text' placeholder='Idowu'/>
+            <input className='w-full p-3 border border-txtinput rounded-[5px]' name='last_name' value={last_name} onChange={(e)=>setLast_name(e.target.value)} type='text' placeholder='Idowu'/>
           </div>
         </div>
         
         <div className='pt-5'>
           <p className='text-left pb-1'>Email Address</p>
-          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='email' type='email' required='required' placeholder='e.g: Samuel John'/>
+          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='email' value={email} onChange={(e)=>setEmail(e.target.value)} type='email' required='required' placeholder='e.g: Samuel John'/>
+          <div className='flex items-center mt-1 text-[10px] text-red-600'><span className='mr-1'><PiWarningFill/></span><p>Your Email Address must be unique</p></div>
         </div>
 
-        <div className='pt-5'>
+        <div className='pt-1'>
           <p className='text-left pb-1'>Phone Number</p>
           <PhoneInput
-            country={'us'}
+            country={'ng'}
             value={phone_number}
-            onChange={(e)=>setPhone_number(e.target.value)}
+            onChange={(e)=>setPhone_number(e)}
             inputProps={{
               required:true
             }}
             className='w-full'
+            defaultMask='... ... ....'
           />
+            <div className='flex items-center mt-1 text-[10px] text-red-600'><span className='mr-1'><PiWarningFill/></span>
+              <p>Your Phone Number must be unique</p>
+            </div>
         </div>
 
-        <div className='pt-5 flex justify-between gap-2'>
+        <div className='pt-1 flex justify-between gap-2'>
           <div className='flex-1'>
             <p className='text-left pb-1'>Age Range</p>
-            <select name='age_range' required='required' className='w-full p-3 border border-txtinput rounded-[5px]'>
+            <select name='age_range' value={age_range} onChange={(e)=>setAge_range(e.target.value)} required='required' className='w-full p-3 border border-txtinput rounded-[5px]'>
               <option defaultChecked>10 - 18</option>
               <option>10 - 17</option>
               <option>18 - 25</option>
@@ -98,7 +122,7 @@ export default function SignUp() {
 
           <div className='flex-1'>
             <p className='text-left pb-1'>Gender</p>
-            <select name='gender' required='required' className='w-full p-3 border border-txtinput rounded-[5px]'>
+            <select name='gender' value={gender} onChange={(e)=>setGender(e.target.value)} required='required' className='w-full p-3 border border-txtinput rounded-[5px]'>
               <option defaultChecked>Male</option>
               <option>Female</option>
             </select>
@@ -107,10 +131,16 @@ export default function SignUp() {
 
         <div className='pt-5'>
           <p className='text-left pb-1'>Password</p>
-          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='password' type='password' required='required' placeholder='Your Password'/>
+          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='password' value={password} onChange={(e)=>setPassword(e.target.value)} type='password' required='required' placeholder='Your Password'/>
+          <div className='flex items-center mt-1 text-[10px] text-red-600'><span className='mr-1'><PiWarningFill/></span>
+            <p>Must be at least 8 characters</p>
+          </div>
+          <div className='flex items-center mt-1 text-[10px] text-red-600'><span className='mr-1'><PiWarningFill/></span>
+            <p>Must contain a capital letter, small letter, a number and a symbol</p>
+          </div>
         </div>
 
-        <button className='bg-bgSecondary text-bgPrimary w-full mt-7 py-3 rounded-[5px] px-4 font-semibold'>Sign Up</button>
+        <button className='bg-bgSecondary text-bgPrimary w-full mt-5 py-3 rounded-[5px] px-4 font-semibold'>Sign Up</button>
 
       </form>
 
