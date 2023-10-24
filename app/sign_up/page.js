@@ -147,10 +147,16 @@ export default function SignUp() {
         <div className='pt-5'>
           <p className='text-left pb-1'>Password</p>
           <input className='w-full p-3 border border-txtinput rounded-[5px]' name='password' value={password} onChange={(e)=>setPassword(e.target.value)} type='password' required='required' placeholder='Your Password'/>
-          <div className='flex items-center mt-1 text-[10px] text-red-600'><span className='mr-1'><PiWarningFill/></span>
-            <p>Must be at least 8 characters</p>
+          <div className='flex items-center mt-1 text-[10px] text-red-600'>
+            { password && password.length < 8 &&
+              <>
+                <span className='mr-1'><PiWarningFill/></span>
+                <p>Must be at least 8 characters</p>
+              </>
+            }
           </div>
-          <div className='flex items-center mt-1 text-[10px] text-red-600'><span className='mr-1'><PiWarningFill/></span>
+          <div className='flex items-center mt-1 text-[10px] text-red-600'>
+            <span className='mr-1'><PiWarningFill/></span>
             <p>Must contain a capital letter, small letter, a number and a symbol</p>
           </div>
         </div>
