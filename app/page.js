@@ -1,12 +1,16 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react';
 
 export default function Home() {
+  const [email,setEmail] = useState('');
+  const [password,setPassword] = useState('');
 
   function handleSubmit(e){
     e.preventDefault();
-    console.log(e.target);
+    console.log(email);
+    console.log(password);
   }
 
   return (
@@ -52,12 +56,12 @@ export default function Home() {
       <form className='pt-2 text-xs w-[80vw] sm:w-[60vw] md:w-[40vw]' onSubmit={(e)=>handleSubmit(e)}>
         <div className='pt-5'>
           <p className='text-left pb-1'>Email Address</p>
-          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='email' type='email' required='required' placeholder='e.g: Samuel John'/>
+          <input className='w-full p-3 border border-txtinput rounded-[5px]' value={email} onChange={(e)=>setEmail(e.target.value)} name='email' type='email' required='required' placeholder='e.g: Samuel John'/>
         </div>
 
         <div className='pt-5'>
           <p className='text-left pb-1'>Password</p>
-          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='password' type='password' required='required' placeholder='Your Password'/>
+          <input className='w-full p-3 border border-txtinput rounded-[5px]' value={password} onChange={(e)=>setPassword(e.target.value)} name='password' type='password' required='required' placeholder='Your Password'/>
           <p className='text-right pt-1'><Link href='#' className='text-bgSecondary font-medium'>Forgot Password?</Link></p>
         </div>
 

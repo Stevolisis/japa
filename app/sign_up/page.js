@@ -144,7 +144,7 @@ export default function SignUp() {
           <div className='flex-1'>
             <p className='text-left pb-1'>Age Range</p>
             <select name='age_range' value={age_range} onChange={(e)=>setAge_range(e.target.value)} required='required' className='w-full p-3 border border-txtinput rounded-[5px]'>
-              <option defaultChecked>10 - 18</option>
+              <option defaultValue></option>
               <option>10 - 17</option>
               <option>18 - 25</option>
               <option>16 - 32</option>
@@ -155,7 +155,8 @@ export default function SignUp() {
           <div className='flex-1'>
             <p className='text-left pb-1'>Gender</p>
             <select name='gender' value={gender} onChange={(e)=>setGender(e.target.value)} required='required' className='w-full p-3 border border-txtinput rounded-[5px]'>
-              <option defaultChecked>Male</option>
+              <option defaultValue></option>
+              <option>Male</option>
               <option>Female</option>
             </select>
           </div>
