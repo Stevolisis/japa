@@ -17,7 +17,7 @@ export default function SignUp() {
   const [gender,setGender] = useState('');
   const [password,setPassword] = useState('');
   const [validphone_number,setValidphone_number] = useState(true);
-  const [validEmail,setValidemail] = useState(false);
+  const [validEmail,setValidemail] = useState(true);
   const [showPassword,setShowpassword] = useState(false);
   const [validpassword,setValidpassword] = useState(false);
 
