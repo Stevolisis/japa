@@ -130,14 +130,14 @@ export default function SignUp() {
             className='w-full'
             defaultMask='... ... ....'
           />
-            <div className='flex items-center mt-1 text-[10px] text-red-600'>
+            {/* <div className='flex items-center mt-1 text-[10px] text-red-600'>
               {phone_number &&
                 <>
                   <span className='mr-1'><PiWarningFill/></span>
                   <p>Your Phone Number must be unique</p>
                 </>
               }
-            </div>
+            </div> */}
         </div>
 
         <div className='pt-1 flex justify-between gap-2'>
