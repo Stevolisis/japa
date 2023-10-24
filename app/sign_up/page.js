@@ -55,7 +55,7 @@ export default function SignUp() {
   return (
     <main className=" pt-12 sm:pt-20 flex justify-center items-center flex-col text-txtPrimary">
         
-      <div className='absolute right-[10vw] top-[7vh] sm:right-[20vw] sm:top-[10vh]'>
+      <div className='absolute -z-10 right-[8vw] top-[7vh] sm:right-[20vw] sm:top-[10vh]'>
         <Image
           src='/blue_circle.png'
           alt='blue_circle'
@@ -64,7 +64,7 @@ export default function SignUp() {
         />
       </div> 
 
-      <div className='absolute left-[2vw] sm:left-[10vw] sm:top-[50vh]'>
+      <div className='absolute -z-10 left-[2vw] sm:left-[10vw] sm:top-[50vh]'>
         <Image
           src='/yellow_circle.png'
           alt='yellow_circle'
@@ -74,7 +74,7 @@ export default function SignUp() {
         />
       </div> 
 
-      <div className='absolute right-[9vw] bottom-[10vh] sm:right-[28vw] sm:bottom-[18vh]'>
+      <div className='absolute -z-10 right-[3vw] bottom-[1vh] sm:right-[27vw] sm:bottom-[1%]'>
         <Image
           src='/pink_circle.png'
           alt='pink_circle'
