@@ -16,10 +16,18 @@ export default function SignUp() {
   const [gender,setGender] = useState('');
   const [password,setPassword] = useState('');
   const [validphone_number,setValidphone_number] = useState(false);
+  const [validEmail,setValidemail] = useState(false);
   const [validpassword1,setValidpassword1] = useState(false);
   const [validpassword2,setValidpassword2] = useState(false);
 
-
+  function isValidEmail(e) {
+    setEmail(e.target.value)
+    if(/\S+@\S+\.\S+/.test(e.target.value)){
+      setValidemail(true);
+    }else{
+      setValidemail(false);
+    }
+  }
 
   function handleSubmit(e){
     e.preventDefault();
@@ -87,8 +95,15 @@ export default function SignUp() {
         
         <div className='pt-5'>
           <p className='text-left pb-1'>Email Address</p>
-          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='email' value={email} onChange={(e)=>setEmail(e.target.value)} type='email' required='required' placeholder='e.g: Samuel John'/>
-          <div className='flex items-center mt-1 text-[10px] text-red-600'><span className='mr-1'><PiWarningFill/></span><p>Your Email Address must be unique</p></div>
+          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='text' value={email} onChange={(e)=>isValidEmail(e)} type='email' required='required' placeholder='e.g: Samuel John'/>
+          <div className='flex items-center mt-1 text-[10px] text-red-600'>
+            { email && !validEmail &&
+              <>
+                <span className='mr-1'><PiWarningFill/></span>
+                <p>Your Email Address must be unique</p>
+              </>
+            }
+          </div>
         </div>
 
         <div className='pt-1'>
