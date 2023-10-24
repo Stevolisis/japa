@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Home() {
+export default function SignUp() {
 
   function handleSubmit(e){
     e.preventDefault();
@@ -42,7 +42,7 @@ export default function Home() {
 
       <div>
         <h2 className='text-2xl font-semibold pb-5'>
-          Log In
+          Sign Up
         </h2>
         <p className='text-sm w-[234px]'>
           Are you ready to take the next step towards a succesful future?
@@ -67,7 +67,7 @@ export default function Home() {
 
 
       <div className='text-xs pt-16'>
-        <p>Don't have an account? <Link className='text-bgSecondary font-medium' href='/sign_up'>Sign Up</Link></p>
+        <p>Already have an account? <Link className='text-bgSecondary font-medium' href='/'>Log In</Link></p>
       </div>
 
     </main>
