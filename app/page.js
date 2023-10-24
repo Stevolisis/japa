@@ -52,12 +52,12 @@ export default function Home() {
       <form className='pt-2 text-xs w-[80vw] sm:w-[60vw] md:w-[40vw]' onSubmit={(e)=>handleSubmit(e)}>
         <div className='pt-5'>
           <p className='text-left pb-1'>Email Address</p>
-          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='email' type='email' placeholder='e.g: Samuel John'/>
+          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='email' type='email' required='required' placeholder='e.g: Samuel John'/>
         </div>
 
         <div className='pt-5'>
           <p className='text-left pb-1'>Password</p>
-          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='password' type='email' placeholder='Your Password'/>
+          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='password' type='password' required='required' placeholder='Your Password'/>
           <p className='text-right pt-1'><Link href='#' className='text-bgSecondary font-medium'>Forgot Password?</Link></p>
         </div>
 

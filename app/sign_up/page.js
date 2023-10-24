@@ -64,7 +64,7 @@ export default function SignUp() {
         
         <div className='pt-5'>
           <p className='text-left pb-1'>Email Address</p>
-          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='email' type='email' placeholder='e.g: Samuel John'/>
+          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='email' type='email' required='required' placeholder='e.g: Samuel John'/>
         </div>
 
         <div className='pt-5 flex justify-between gap-2'>
@@ -90,7 +90,7 @@ export default function SignUp() {
 
         <div className='pt-5'>
           <p className='text-left pb-1'>Password</p>
-          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='password' type='email' placeholder='Your Password'/>
+          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='password' type='password' required='required' placeholder='Your Password'/>
         </div>
 
         <button className='bg-bgSecondary text-bgPrimary w-full mt-7 py-3 rounded-[5px] px-4 font-semibold'>Sign Up</button>
