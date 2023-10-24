@@ -27,11 +27,11 @@ export default function Home() {
           alt='pink_circle'
           width={40}
           height={40}
-          className='w-7 h-7 sm:w-10 sm:h-10'
+          className='w-5 h-5 sm:w-10 sm:h-10'
         />
       </div> 
 
-      <div className='absolute right-[9vw] bottom-[10vh] sm:right-[29vw] sm:bottom-[15vh]'>
+      <div className='absolute right-[9vw] bottom-[13vh] sm:right-[29vw] sm:bottom-[10vh]'>
         <Image
           src='/blue_circle.png'
           alt='blue_circle'
@@ -41,7 +41,7 @@ export default function Home() {
       </div> 
 
       <div>
-        <h2 className='text-2xl font-semibold pb-5'>
+        <h2 className='text-3xl font-semibold pb-5'>
           Log In
         </h2>
         <p className='text-sm w-[234px]'>
