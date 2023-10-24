@@ -19,7 +19,7 @@ export default function SignUp() {
   const [validphone_number,setValidphone_number] = useState(false);
   const [validEmail,setValidemail] = useState(false);
   const [showPassword,setShowpassword] = useState(false);
-  const [validpassword2,setValidpassword2] = useState(false);
+  const [validpassword,setValidpassword] = useState(false);
 
   function isValidEmail(e) {
     setEmail(e.target.value);
@@ -29,6 +29,17 @@ export default function SignUp() {
       setValidemail(false);
     }
   }
+
+  function isValidatePassword(e){
+    setPassword(e.target.value);
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]+$/;
+    console.log(passwordRegex.test(e.target.value));
+    if(passwordRegex.test(e.target.value)){
+      setValidpassword(true);
+    }else{
+      setValidpassword(false);
+    }
+  };
 
   function handleSubmit(e){
     e.preventDefault();
@@ -154,7 +165,7 @@ export default function SignUp() {
           <p className='text-left pb-1'>Password</p>
           <div className='flex items-center'>
             <input className='w-full p-3 border border-txtinput rounded-[5px]' name='password' value={password} 
-              onChange={(e)=>setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} 
+              onChange={(e)=>isValidatePassword(e)} type={showPassword ? 'text' : 'password'} 
               required='required' placeholder='Your Password'/>
             <span className='relative right -ml-9'>{showPassword ? 
               <AiFillEye className='text-xl cursor-pointer' onClick={()=>setShowpassword(!showPassword)}/> : 
@@ -169,8 +180,12 @@ export default function SignUp() {
             }
           </div>
           <div className='flex items-center mt-1 text-[10px] text-red-600'>
-            <span className='mr-1'><PiWarningFill/></span>
-            <p>Must contain a capital letter, small letter, a number and a symbol</p>
+            { password && !validpassword &&
+              <>
+                <span className='mr-1'><PiWarningFill/></span>
+                <p>Must contain a capital letter, small letter, a number and a symbol</p>
+              </>
+            }
           </div>
         </div>
 
