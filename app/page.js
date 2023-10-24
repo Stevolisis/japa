@@ -10,7 +10,7 @@ export default function Home() {
   }
 
   return (
-    <main className=" pt-12 sm:pt-20 flex justify-center items-center flex-col text-center text-txtPrimary">
+    <main className=" pt-12 sm:pt-20 flex justify-center items-center flex-col text-txtPrimary">
         
       <div className='absolute right-[10vw] top-[7vh] sm:right-[20vw] sm:top-[10vh]'>
         <Image
@@ -40,7 +40,7 @@ export default function Home() {
         />
       </div> 
 
-      <div>
+      <div className='text-center'>
         <h2 className='text-3xl font-semibold pb-5'>
           Log In
         </h2>

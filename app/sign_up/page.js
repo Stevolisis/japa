@@ -1,16 +1,20 @@
 "use client"
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css'
 
 export default function SignUp() {
-
+  const [phone_number,setPhone_number] = useState('');
   function handleSubmit(e){
     e.preventDefault();
     console.log(e.target);
   }
 
   return (
-    <main className=" pt-12 sm:pt-20 flex justify-center items-center flex-col text-center text-txtPrimary">
+    <main className=" pt-12 sm:pt-20 flex justify-center items-center flex-col text-txtPrimary">
         
       <div className='absolute right-[10vw] top-[7vh] sm:right-[20vw] sm:top-[10vh]'>
         <Image
@@ -33,14 +37,14 @@ export default function SignUp() {
 
       <div className='absolute right-[9vw] bottom-[10vh] sm:right-[28vw] sm:bottom-[18vh]'>
         <Image
-          src='/blue_circle.png'
-          alt='blue_circle'
+          src='/pink_circle.png'
+          alt='pink_circle'
           width={20}
           height={20}
         />
       </div> 
 
-      <div>
+      <div className='text-center'>
         <h2 className='text-3xl font-semibold pb-5'>
           Create Account
         </h2>
@@ -65,6 +69,19 @@ export default function SignUp() {
         <div className='pt-5'>
           <p className='text-left pb-1'>Email Address</p>
           <input className='w-full p-3 border border-txtinput rounded-[5px]' name='email' type='email' required='required' placeholder='e.g: Samuel John'/>
+        </div>
+
+        <div className='pt-5'>
+          <p className='text-left pb-1'>Phone Number</p>
+          <PhoneInput
+            country={'us'}
+            value={phone_number}
+            onChange={(e)=>setPhone_number(e.target.value)}
+            inputProps={{
+              required:true
+            }}
+            className='w-full'
+          />
         </div>
 
         <div className='pt-5 flex justify-between gap-2'>
