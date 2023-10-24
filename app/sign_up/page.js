@@ -5,7 +5,8 @@ import Link from 'next/link'
 import { useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'
-import {PiWarningFill} from 'react-icons/pi';
+import { PiWarningFill } from 'react-icons/pi';
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
 export default function SignUp() {
   const [first_name,setFirst_name] = useState('');
@@ -17,11 +18,11 @@ export default function SignUp() {
   const [password,setPassword] = useState('');
   const [validphone_number,setValidphone_number] = useState(false);
   const [validEmail,setValidemail] = useState(false);
-  const [validpassword1,setValidpassword1] = useState(false);
+  const [showPassword,setShowpassword] = useState(false);
   const [validpassword2,setValidpassword2] = useState(false);
 
   function isValidEmail(e) {
-    setEmail(e.target.value)
+    setEmail(e.target.value);
     if(/\S+@\S+\.\S+/.test(e.target.value)){
       setValidemail(true);
     }else{
@@ -118,8 +119,13 @@ export default function SignUp() {
             className='w-full'
             defaultMask='... ... ....'
           />
-            <div className='flex items-center mt-1 text-[10px] text-red-600'><span className='mr-1'><PiWarningFill/></span>
-              <p>Your Phone Number must be unique</p>
+            <div className='flex items-center mt-1 text-[10px] text-red-600'>
+              {phone_number &&
+                <>
+                  <span className='mr-1'><PiWarningFill/></span>
+                  <p>Your Phone Number must be unique</p>
+                </>
+              }
             </div>
         </div>
 
@@ -146,7 +152,14 @@ export default function SignUp() {
 
         <div className='pt-5'>
           <p className='text-left pb-1'>Password</p>
-          <input className='w-full p-3 border border-txtinput rounded-[5px]' name='password' value={password} onChange={(e)=>setPassword(e.target.value)} type='password' required='required' placeholder='Your Password'/>
+          <div className='flex items-center'>
+            <input className='w-full p-3 border border-txtinput rounded-[5px]' name='password' value={password} 
+              onChange={(e)=>setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} 
+              required='required' placeholder='Your Password'/>
+            <span className='relative right -ml-9'>{showPassword ? 
+              <AiFillEye className='text-xl cursor-pointer' onClick={()=>setShowpassword(!showPassword)}/> : 
+              <AiFillEyeInvisible className='text-xl cursor-pointer' onClick={()=>setShowpassword(!showPassword)}/>}</span>
+          </div>
           <div className='flex items-center mt-1 text-[10px] text-red-600'>
             { password && password.length < 8 &&
               <>
