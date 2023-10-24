@@ -16,7 +16,7 @@ export default function SignUp() {
   const [age_range,setAge_range] = useState('');
   const [gender,setGender] = useState('');
   const [password,setPassword] = useState('');
-  const [validphone_number,setValidphone_number] = useState(false);
+  const [validphone_number,setValidphone_number] = useState(true);
   const [validEmail,setValidemail] = useState(false);
   const [showPassword,setShowpassword] = useState(false);
   const [validpassword,setValidpassword] = useState(false);
@@ -118,7 +118,7 @@ export default function SignUp() {
           </div>
         </div>
 
-        <div className='pt-1'>
+        <div className={`${validEmail ? 'pt-5' : 'pt-1'}`}>
           <p className='text-left pb-1'>Phone Number</p>
           <PhoneInput
             country={'ng'}
@@ -140,7 +140,7 @@ export default function SignUp() {
             </div> */}
         </div>
 
-        <div className='pt-1 flex justify-between gap-2'>
+        <div className={`${validphone_number ? 'pt-5' : 'pt-1'} flex justify-between gap-2`}>
           <div className='flex-1'>
             <p className='text-left pb-1'>Age Range</p>
             <select name='age_range' value={age_range} onChange={(e)=>setAge_range(e.target.value)} required='required' className='w-full p-3 border border-txtinput rounded-[5px]'>
