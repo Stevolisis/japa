@@ -7,6 +7,8 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'
 import { PiWarningFill } from 'react-icons/pi';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+import Swal from 'sweetalert2';
+import axios from 'axios';
 
 export default function SignUp() {
   const [first_name,setFirst_name] = useState('');
@@ -41,15 +43,45 @@ export default function SignUp() {
     }
   };
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    },
+    customClass:'toaster'
+  })
+
   function handleSubmit(e){
     e.preventDefault();
-    console.log(first_name);
-    console.log(last_name);
-    console.log(email);
-    console.log(phone_number);
-    console.log(age_range);
-    console.log(gender);
-    console.log(password);
+    if(isValidEmail && isValidatePassword){
+      axios.post('https://nice-story-production.up.railway.app/api/v1/auth/register',{
+        firstName:first_name,
+        lastName:last_name,
+        email:email,
+        phone:phone_number,
+        ageRange:age_range,
+        gender:gender,
+        password:password,
+      })
+      .then(res=>{
+        console.log(res);
+        Toast.fire({
+          icon: 'success',
+          title: 'Signed Up Successfully'
+      });
+      }).catch(err=>{
+        console.log(err);
+        Toast.fire({
+          icon: 'error',
+          title: 'Error Occured!'
+        });
+      })
+    }
   }
 
   return (
@@ -96,12 +128,12 @@ export default function SignUp() {
         <div className='pt-5 flex justify-between gap-2'>
           <div className='flex-1'>
             <p className='text-left pb-1'>First Name</p>
-            <input className='w-full p-3 border border-txtinput rounded-[5px]' name='first_name' value={first_name} onChange={(e)=>setFirst_name(e.target.value)} type='text' placeholder='Newton Adeola'/>
+            <input className='w-full p-3 border border-txtinput rounded-[5px]' name='first_name' value={first_name} required='required' onChange={(e)=>setFirst_name(e.target.value)} type='text' placeholder='Newton Adeola'/>
           </div>
 
           <div className='flex-1'>
             <p className='text-left pb-1'>Last Name</p>
-            <input className='w-full p-3 border border-txtinput rounded-[5px]' name='last_name' value={last_name} onChange={(e)=>setLast_name(e.target.value)} type='text' placeholder='Idowu'/>
+            <input className='w-full p-3 border border-txtinput rounded-[5px]' name='last_name' value={last_name} required='required' onChange={(e)=>setLast_name(e.target.value)} type='text' placeholder='Idowu'/>
           </div>
         </div>
         
@@ -118,7 +150,7 @@ export default function SignUp() {
           </div>
         </div>
 
-        <div className={`${validEmail ? 'pt-5' : 'pt-1'}`}>
+        <div className={`${ validEmail ? 'pt-5' : 'pt-1'}`}>
           <p className='text-left pb-1'>Phone Number</p>
           <PhoneInput
             country={'ng'}

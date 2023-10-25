@@ -7,3 +7,8 @@
     width: 100% !important;
     height: 43px !important;
 }
+
+.swal2-container{
+    width: 300px !important;
+    max-width: 300px !important;
+}

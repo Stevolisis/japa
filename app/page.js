@@ -1,16 +1,47 @@
 "use client"
+import axios from 'axios';
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 export default function Home() {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
 
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 500100,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    },
+    className:'w-[100px]'
+  })
+
   function handleSubmit(e){
     e.preventDefault();
-    console.log(email);
-    console.log(password);
+    axios.post('https://nice-story-production.up.railway.app/api/v1/auth/login',{
+      email:email,
+      password:password,
+    })
+    .then(res=>{
+      console.log(res);
+      Toast.fire({
+        icon: 'success',
+        title: 'Log In Successful'
+    });
+    }).catch(err=>{
+      console.log(err);
+      Toast.fire({
+        icon: 'error',
+        title: 'Error Occured!'
+      });
+    })
   }
 
   return (
