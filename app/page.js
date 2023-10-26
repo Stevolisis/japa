@@ -2,6 +2,7 @@
 import Header from "@/components/Header"
 import Opening from "@/components/Opening";
 import RolesMarquee from "@/components/RolesMarquee"
+import Image from "next/image";
 import Link from "next/link";
 import { BsArrowRightShort } from "react-icons/bs"
 
@@ -87,14 +88,18 @@ export default function Home() {
 
 
 
-        <div className="mx-14 my-12 p-10 rounded-xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] bg-black text-bgPrimary">
-          <div className="font-semibold text-2xl">
+        <div className="mx-14 my-12 px-16 py-10 flex justify-between items-center rounded-xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] bg-black text-bgPrimary">
+          <div className="font-semibold text-2xl w-[60%]">
             <h3>Take Our Talent Assessment Exam for Course Recommendations</h3>
-            <h3>To get your next role!</h3>
+            <h3 className="top-12 relative">To get your next role!</h3>
           </div>
-          <div>
+          <div className="flex justify-center items-center flex-col">
             <div>
-              
+              <Image src='http://localhost:3000/jointhands.webp' alt='patnership' 
+                width={250} height={220} className="-mt-20"/>
+            </div>
+            <div>
+              <Link href='#' className="py-3 px-20 text-txtPrimary bg-bgPrimary text-sm rounded-[5px] font-semibold">Take Test</Link>
             </div>
           </div>
         </div>
