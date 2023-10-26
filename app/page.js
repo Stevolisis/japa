@@ -1,10 +1,10 @@
 "use client"
-
 import Header from "@/components/Header"
 import Opening from "@/components/Opening";
 import RolesMarquee from "@/components/RolesMarquee"
 import Link from "next/link";
 import { BsArrowRightShort } from "react-icons/bs"
+
 
 export default function Home() {
   const roles = ['Front End Developer','UI/UX Designer','Developers','Graphic Designer','SQL Database Administrator','AI Expert','Data Analyst','Cyber Security Expert','Content Creator'];
@@ -12,7 +12,12 @@ export default function Home() {
     {role:'UI/UX Designer at MTN',type:'Remote',logo:'http://localhost:3000/mtn.png',description:'We are currentky seeking to hire an experienced UI/UX Designer with an extensive and proven  experience who can work in high...'},
     {role:'Web Developer at MTN',type:'Remote',logo:'http://localhost:3000/mtn.png',description:'We are currentky seeking to hire an experienced Web Developer with an extensive and proven  experience who can work in high...'},
     {role:'Mobile Developer at MTN',type:'Remote',logo:'http://localhost:3000/mtn.png',description:'We are currentky seeking to hire an experienced Mobile Developer with an extensive and proven  experience who can work in high...'},
-  ]
+  ];
+
+
+
+
+
 
   return (
     <>
@@ -58,9 +63,15 @@ export default function Home() {
           </div>
         </div>
 
+
+
+
         <div className="py-9 bg-[#c8b0ee] relative flex overflow-x-hidden text-bgPrimary">
           <RolesMarquee data={roles}/>
         </div>
+
+
+
 
         <div className="py-10 px-14">
           <div><h2 className="font-semibold text-2xl">Land your next role with the newest openings</h2></div>
@@ -71,6 +82,20 @@ export default function Home() {
             <Link href='#' className="rounded-[5px] border-2 border-bgSecondary text-bgSecondary underline py-3 px-10 text-sm font-bold flex items-center">See more Jobs 
               <BsArrowRightShort className="text-xl ml-6"/>
             </Link>
+          </div>
+        </div>
+
+
+
+        <div className="mx-14 my-12 p-10 rounded-xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] bg-black text-bgPrimary">
+          <div className="font-semibold text-2xl">
+            <h3>Take Our Talent Assessment Exam for Course Recommendations</h3>
+            <h3>To get your next role!</h3>
+          </div>
+          <div>
+            <div>
+              
+            </div>
           </div>
         </div>
 
