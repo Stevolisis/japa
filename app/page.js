@@ -37,7 +37,7 @@ export default function Home() {
       <Header page='home'/>
       <main>
 
-        <div className="px-9 sm:px-7 md:px-0 text-bgPrimary h-[80vh] flex justify-center items-center flex-col bg-slate-500" 
+        <div className="px-9 sm:px-7 md:px-0 py-24 text-bgPrimary h-auto sm:h-[80vh] flex justify-center items-center flex-col bg-slate-500" 
           style={{backgroundImage:`linear-gradient(45deg,rgba(100,100,100,0.2),rgba(100,100,100,0.2)),
           url(http://localhost:3000/splash5.jpg)`,backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}>
           
@@ -86,9 +86,9 @@ export default function Home() {
 
 
 
-        <div className="py-10 px-14">
+        <div className="py-7 sm:py-10 px-7 sm:px-14">
           <div><h2 className="font-semibold text-2xl">Land your next role with the newest openings</h2></div>
-          <div className="grid grid-cols-3 gap-6 py-7">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-7">
             <Opening data={openings}/>
           </div>
           <div className="flex items-center">
@@ -100,10 +100,10 @@ export default function Home() {
 
 
 
-        <div className="mx-14 my-12 px-16 py-10 flex justify-between items-center rounded-xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] bg-black text-bgPrimary">
-          <div className="font-semibold text-xl md:text-2xl w-[60%]">
+        <div className="mx-7 sm:mx-14 my-7 sm:my-12 px-8 sm:px-16 py-7 sm:py-10 flex justify-center sm:justify-between items-center flex-wrap sm:flex-nowrap rounded-xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] bg-black text-bgPrimary">
+          <div className="font-semibold text-xl md:text-2xl w-full sm:w-[60%]">
             <h3>Take Our Talent Assessment Exam for Course Recommendations</h3>
-            <h3 className="top-10 md:top-12 relative">To get your next role!</h3>
+            <h3 className="top-10 md:top-12 sm:relative">To get your next role!</h3>
           </div>
           <div className="flex justify-center items-center flex-col">
             <div>
