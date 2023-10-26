@@ -108,7 +108,7 @@ export default function Home() {
           <div className="flex justify-center items-center flex-col">
             <div>
               <Image src='https://japa-steel.vercel.app/jointhands.webp' alt='patnership' 
-                width={250} height={220} className="-mt-20"/>
+                width={250} height={220} className="mt-4 sm:-mt-20"/>
             </div>
             <div>
               <Link href='#' className="py-3 px-20 text-txtPrimary bg-bgPrimary text-sm rounded-[5px] font-semibold">Take Test</Link>
