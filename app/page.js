@@ -1,4 +1,5 @@
 "use client"
+import BlogSlide from "@/components/BlogSlide";
 import Header from "@/components/Header"
 import Opening from "@/components/Opening";
 import RolesMarquee from "@/components/RolesMarquee"
@@ -13,6 +14,14 @@ export default function Home() {
     {role:'UI/UX Designer at MTN',type:'Remote',logo:'http://localhost:3000/mtn.png',description:'We are currentky seeking to hire an experienced UI/UX Designer with an extensive and proven  experience who can work in high...'},
     {role:'Web Developer at MTN',type:'Remote',logo:'http://localhost:3000/mtn.png',description:'We are currentky seeking to hire an experienced Web Developer with an extensive and proven  experience who can work in high...'},
     {role:'Mobile Developer at MTN',type:'Remote',logo:'http://localhost:3000/mtn.png',description:'We are currentky seeking to hire an experienced Mobile Developer with an extensive and proven  experience who can work in high...'},
+  ];
+  const blog = [
+    {img:'http://localhost:3000/splash1.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
+    {img:'http://localhost:3000/splash2.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
+    {img:'http://localhost:3000/splash3.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
+    {img:'http://localhost:3000/splash4.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
+    {img:'http://localhost:3000/splash6.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
+    {img:'http://localhost:3000/splash7.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
   ];
 
 
@@ -102,6 +111,14 @@ export default function Home() {
               <Link href='#' className="py-3 px-20 text-txtPrimary bg-bgPrimary text-sm rounded-[5px] font-semibold">Take Test</Link>
             </div>
           </div>
+        </div>
+
+
+
+
+        <div className="py-10 px-14">
+          <div><h2 className="font-semibold text-2xl">See the latest on our Blog</h2></div>
+          <BlogSlide data={blog}/>
         </div>
 
       </main>

@@ -15,7 +15,8 @@
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "react-phone-input-2": "^2.15.1",
-    "sweetalert2": "^11.7.32"
+    "sweetalert2": "^11.7.32",
+    "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
     "autoprefixer": "^10",
