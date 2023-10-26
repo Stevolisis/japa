@@ -14,15 +14,15 @@ export default function Header({page}){
       <header className="flex justify-between items-center px-7 py-5">
         <div>
             <h1 className='text-bgSecondary text-2xl'>
-            <Link href='/' className='font-extrabold'>JAPA</Link>
+              <Link href='/' className='font-extrabold'>JAPA</Link>
             </h1>
         </div>
 
         <div className="text-xs font-medium flex gap-16">
             <Link href='/' className="border-b border-b-2 border-bgSecondary">Home</Link>
-            <Link href='/' className="border-b border-b-2 border-bgSecondary">Jobs</Link>
-            <Link href='/' className="border-b border-b-2 border-bgSecondary">Courses</Link>
-            <Link href='/' className="border-b border-b-2 border-bgSecondary">Blog</Link>
+            <Link href='/#jobs'>Jobs</Link>
+            <Link href='/#courses'>Courses</Link>
+            <Link href='/#blog'>Blog</Link>
         </div>
 
         <div className="flex gap-3">

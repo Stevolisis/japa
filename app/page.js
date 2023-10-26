@@ -5,10 +5,13 @@ import Opening from "@/components/Opening";
 import RolesMarquee from "@/components/RolesMarquee"
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { BsArrowRightShort } from "react-icons/bs"
 
 
 export default function Home() {
+  const search  = useSearchParams();
+  console.log(search);
   const roles = ['Front End Developer','UI/UX Designer','Developers','Graphic Designer','SQL Database Administrator','AI Expert','Data Analyst','Cyber Security Expert','Content Creator'];
   const openings = [
     {role:'UI/UX Designer at MTN',type:'Remote',logo:'http://localhost:3000/mtn.png',description:'We are currentky seeking to hire an experienced UI/UX Designer with an extensive and proven  experience who can work in high...'},
@@ -120,6 +123,52 @@ export default function Home() {
           <div><h2 className="font-semibold text-2xl">See the latest on our Blog</h2></div>
           <BlogSlide data={blog}/>
         </div>
+
+
+        <footer className="px-14 pt-10 pb-16 border-b-8 border-b-pink-500  border-t-2 border-t-gray-200">
+          <div className="flex justify-between pb-16">
+            <div>
+              <h1 className="text-bgSecondary text-2xl font-extrabold">JAPA</h1>
+            </div>
+            <div>
+              <div><h4 className="font-semibold text-sm">Networks</h4></div>
+              <div className="text-xs flex flex-col gap-2 pt-2">
+                <Link href='#'>About Us</Link>
+                <Link href='#'>Contact Us</Link>
+              </div>
+            </div>
+            <div>
+              <div><h4 className="font-semibold text-sm">Jobs</h4></div>
+              <div className="text-xs flex flex-col gap-2 pt-2">
+                <Link href='#'>Remote Job Marketplace</Link>
+                <Link href='#'>Training Programs</Link>
+              </div>
+            </div>
+            <div>
+              <div><h4 className="font-semibold text-sm">Resources</h4></div>
+              <div className="text-xs flex flex-col gap-2 pt-2">
+                <Link href='#'>Training Programs</Link>
+                <Link href='#'>CV Template</Link>
+                <Link href='#'>Community</Link>
+              </div>
+            </div>
+          </div>
+
+          <div className=" flex justify-between items-center">
+            <div><p className="text-sm">Connect with japa</p></div>
+            <div className="flex gap-4 items-center">
+              <Link href='#'>
+                <Image src='http://localhost:3000/instagram.png' alt="instagram" width={30} height={30}/>
+              </Link>
+              <Link href='#'>
+                <Image src='http://localhost:3000/linkedin.png' alt="linkedin" width={30} height={30}/>
+              </Link>
+              <Link href='#'>
+                <Image src='http://localhost:3000/x.png' alt="twitter" width={34} height={34}/>
+              </Link>
+            </div>
+          </div>
+        </footer>
 
       </main>
     </>
