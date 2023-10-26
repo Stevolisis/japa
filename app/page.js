@@ -37,21 +37,21 @@ export default function Home() {
       <Header page='home'/>
       <main>
 
-        <div className="text-bgPrimary h-[80vh] flex justify-center items-center flex-col bg-slate-500" 
+        <div className="px-9 sm:px-7 md:px-0 text-bgPrimary h-[80vh] flex justify-center items-center flex-col bg-slate-500" 
           style={{backgroundImage:`linear-gradient(45deg,rgba(100,100,100,0.2),rgba(100,100,100,0.2)),
           url(http://localhost:3000/splash5.jpg)`,backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}>
           
           <div className="pb-5">
-            <h1 className="text-4xl">Find your dream job!</h1>
+            <h1 className="text-3xl sm:text-4xl">Find your dream job!</h1>
           </div>
-          <div>
-            <form className="flex gap-3 w-full items-end">
-              <div>
-                <p>Role</p>
+          <div className="w-full sm:w-auto">
+            <form className="flex flex-col sm:flex-row gap-3 w-full items-center sm:items-end">
+              <div className="w-full">
+                <p className="text-sm">Role</p>
                 <input className="w-full text-txtPrimary p-3 border border-txtinput rounded-[5px] text-sm" type="text" placeholder="Name of role"/>
               </div>
-              <div>
-                <p>Field</p>
+              <div className="w-full">
+                <p className="text-sm">Field</p>
                 <select className="w-full p-3 border border-txtinput rounded-[5px] text-sm text-txtPrimary">
                   <option>Job Category</option>
                   <option>Data Analysis</option>
@@ -60,8 +60,8 @@ export default function Home() {
                   <option>Mobile Development</option>
                 </select>
               </div>
-              <div>
-                <p>Location</p>
+              <div className="w-full">
+                <p className="text-sm">Location</p>
                 <select className="w-full p-3 border border-txtinput rounded-[5px] text-sm text-txtPrimary">
                   <option>Afghanistan</option>
                   <option>Argetina</option>
@@ -101,9 +101,9 @@ export default function Home() {
 
 
         <div className="mx-14 my-12 px-16 py-10 flex justify-between items-center rounded-xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] bg-black text-bgPrimary">
-          <div className="font-semibold text-2xl w-[60%]">
+          <div className="font-semibold text-xl md:text-2xl w-[60%]">
             <h3>Take Our Talent Assessment Exam for Course Recommendations</h3>
-            <h3 className="top-12 relative">To get your next role!</h3>
+            <h3 className="top-10 md:top-12 relative">To get your next role!</h3>
           </div>
           <div className="flex justify-center items-center flex-col">
             <div>
@@ -126,7 +126,7 @@ export default function Home() {
 
 
         <footer className="px-14 pt-10 pb-16 border-b-8 border-b-pink-500  border-t-2 border-t-gray-200">
-          <div className="flex justify-between pb-16">
+          <div className="flex flex-col sm:flex-row justify-between pb-16">
             <div>
               <h1 className="text-bgSecondary text-2xl font-extrabold">JAPA</h1>
             </div>

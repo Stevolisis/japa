@@ -9,7 +9,7 @@ export default function RolesMarquee({data}){
                 {
                     data.map((role,i)=>{
                         return(
-                            <div className="flex items-center" key={i}><span className="text-xl mx-4">{role}</span><PiStarFourFill className="text-4xl mx-2"/></div>
+                            <div className="flex items-center" key={i}><span className="text-lg sm:text-xl mx-4">{role}</span><PiStarFourFill className="text-3xl sm:text-4xl mx-2"/></div>
                         )
                     })
                 }
@@ -18,7 +18,7 @@ export default function RolesMarquee({data}){
                 {
                     data.map((role,i)=>{
                         return(
-                            <div className="flex items-center" key={i}><span className="text-xl mx-4">{role}</span><PiStarFourFill className="text-4xl mx-2"/></div>
+                            <div className="flex items-center" key={i}><span className="text-lg sm:text-xl mx-4">{role}</span><PiStarFourFill className="text-3xl sm:text-4xl mx-2"/></div>
                         )
                     })
                 }
