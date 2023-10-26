@@ -25,7 +25,7 @@ export default function BlogSlide({data}){
                             return(
                                 <div key={i} style={{backgroundImage:`linear-gradient(45deg,rgba(50,50,50,0.2),rgba(50,50,50,0.2)),
                                     url(${item.img})`,backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}
-                                className="flex flex-col justify-between items-end px-10 py-7 rounded-md w-[300px] sm:w-[340px] min-w-[300px] sm:min-w-[340px] h-[190px] sm:h-[220px]">
+                                className="flex flex-col justify-between items-end px-7 sm:px-10 py-7 rounded-md w-[300px] sm:w-[340px] min-w-[300px] sm:min-w-[340px] h-[190px] sm:h-[220px]">
 
                                     <div><p className="text-xl font-medium">{item.title}</p></div>
                                     <div>

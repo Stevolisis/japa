@@ -100,7 +100,7 @@ export default function Home() {
 
 
 
-        <div className="mx-7 sm:mx-14 my-7 sm:my-12 px-8 sm:px-16 py-7 sm:py-10 flex justify-center sm:justify-between items-center flex-wrap sm:flex-nowrap rounded-xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] bg-black text-bgPrimary">
+        <div className="mx-7 sm:mx-14 my-7 sm:my-12 px-8 sm:px-16 py-10 flex justify-center sm:justify-between items-center flex-wrap sm:flex-nowrap rounded-xl shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] bg-black text-bgPrimary">
           <div className="font-semibold text-xl md:text-2xl w-full sm:w-[60%]">
             <h3>Take Our Talent Assessment Exam for Course Recommendations</h3>
             <h3 className="top-10 md:top-12 sm:relative">To get your next role!</h3>
