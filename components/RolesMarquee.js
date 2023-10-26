@@ -9,7 +9,7 @@ export default function RolesMarquee({data}){
                 {
                     data.map((role,i)=>{
                         return(
-                            <><span class="text-xl mx-4">{role}</span><PiStarFourFill className="text-4xl mx-2"/></>
+                            <div className="flex items-center" key={i}><span class="text-xl mx-4">{role}</span><PiStarFourFill className="text-4xl mx-2"/></div>
                         )
                     })
                 }

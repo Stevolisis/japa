@@ -1,10 +1,18 @@
 "use client"
 
 import Header from "@/components/Header"
+import Opening from "@/components/Opening";
 import RolesMarquee from "@/components/RolesMarquee"
+import Link from "next/link";
+import { BsArrowRightShort } from "react-icons/bs"
 
 export default function Home() {
   const roles = ['Front End Developer','UI/UX Designer','Developers','Graphic Designer','SQL Database Administrator','AI Expert','Data Analyst','Cyber Security Expert','Content Creator'];
+  const openings = [
+    {role:'UI/UX Designer at MTN',type:'Remote',logo:'http://localhost:3000/mtn.png',description:'We are currentky seeking to hire an experienced UI/UX Designer with an extensive and proven  experience who can work in high...'},
+    {role:'Web Developer at MTN',type:'Remote',logo:'http://localhost:3000/mtn.png',description:'We are currentky seeking to hire an experienced Web Developer with an extensive and proven  experience who can work in high...'},
+    {role:'Mobile Developer at MTN',type:'Remote',logo:'http://localhost:3000/mtn.png',description:'We are currentky seeking to hire an experienced Mobile Developer with an extensive and proven  experience who can work in high...'},
+  ]
 
   return (
     <>
@@ -52,6 +60,18 @@ export default function Home() {
 
         <div className="py-9 bg-[#c8b0ee] relative flex overflow-x-hidden text-bgPrimary">
           <RolesMarquee data={roles}/>
+        </div>
+
+        <div className="py-10 px-14">
+          <div><h2 className="font-semibold text-2xl">Land your next role with the newest openings</h2></div>
+          <div className="grid grid-cols-3 gap-6 py-7">
+            <Opening data={openings}/>
+          </div>
+          <div className="flex items-center">
+            <Link href='#' className="rounded-[5px] border-2 border-bgSecondary text-bgSecondary underline py-3 px-10 text-sm font-bold flex items-center">See more Jobs 
+              <BsArrowRightShort className="text-xl ml-6"/>
+            </Link>
+          </div>
         </div>
 
       </main>
