@@ -47,7 +47,7 @@ export default function Header({page}){
             <Link href='/' className="block my-3 ">Courses</Link>
             <Link href='/' className="block my-3 ">Blog</Link>
             <Link href='/sign_up' className="block mt-3 py-2 px-3 -mx-1 text-center bg-bgPrimary text-bgSecondary rounded">Sign Up</Link>
-            <Link href='/sign_in' className="block mt-3 py-2 px-3 -mx-1 text-center bg-bgPrimary text-bgSecondary rounded">Sign In</Link>
+            <Link href='/log_in' className="block mt-3 py-2 px-3 -mx-1 text-center bg-bgPrimary text-bgSecondary rounded">Sign In</Link>
           </div>
         }
 
