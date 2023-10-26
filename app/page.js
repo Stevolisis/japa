@@ -5,13 +5,10 @@ import Opening from "@/components/Opening";
 import RolesMarquee from "@/components/RolesMarquee"
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { BsArrowRightShort } from "react-icons/bs"
 
 
 export default function Home() {
-  const search  = useSearchParams();
-  console.log(search);
   const roles = ['Front End Developer','UI/UX Designer','Developers','Graphic Designer','SQL Database Administrator','AI Expert','Data Analyst','Cyber Security Expert','Content Creator'];
   const openings = [
     {role:'UI/UX Designer at MTN',type:'Remote',logo:'https://japa-steel.vercel.app/mtn.png',description:'We are currentky seeking to hire an experienced UI/UX Designer with an extensive and proven  experience who can work in high...'},
@@ -108,7 +105,7 @@ export default function Home() {
           <div className="flex justify-center items-center flex-col">
             <div>
               <Image src='https://japa-steel.vercel.app/jointhands.webp' alt='patnership' 
-                width={250} height={220} className="mt-4 sm:-mt-20"/>
+                width={250} height={220} className="mt-4 sm:-mt-20 w-[200px] sm:w-[250px] h-[170px] sm:h-[220px]"/>
             </div>
             <div>
               <Link href='#' className="py-3 px-20 text-txtPrimary bg-bgPrimary text-sm rounded-[5px] font-semibold">Take Test</Link>
