@@ -87,7 +87,7 @@ export default function Home() {
 
 
         <div className="py-7 sm:py-10 px-7 sm:px-14">
-          <div><h2 className="font-semibold text-2xl">Land your next role with the newest openings</h2></div>
+          <div><h2 className="font-semibold text-xl sm:text-2xl">Land your next role with the newest openings</h2></div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-7">
             <Opening data={openings}/>
           </div>
@@ -119,8 +119,8 @@ export default function Home() {
 
 
 
-        <div className="py-10 px-14">
-          <div><h2 className="font-semibold text-2xl">See the latest on our Blog</h2></div>
+        <div className="py-7 sm:py-10 px-7 sm:px-14">
+          <div><h2 className="font-semibold text-xl sm:text-2xl">See the latest on our Blog</h2></div>
           <BlogSlide data={blog}/>
         </div>
 
