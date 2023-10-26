@@ -2,7 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,8 +15,8 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} bg-bgPrimary p-7`}>
 
         <header className='pb-5'>
-          <h1 className='text-bgSecondary text-2xl font-extrabold'>
-            <Link href='/'>JAPA</Link>
+          <h1 className='text-bgSecondary text-2xl'>
+            <Link href='/' className='font-extrabold'>JAPA</Link>
           </h1>
         </header>
 

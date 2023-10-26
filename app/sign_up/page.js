@@ -228,7 +228,7 @@ export default function SignUp() {
 
 
       <div className='text-xs pt-16'>
-        <p>Already have an account? <Link className='text-bgSecondary font-medium' href='/'>Log In</Link></p>
+        <p>Already have an account? <Link className='text-bgSecondary font-medium' href='/log_in'>Log In</Link></p>
       </div>
 
     </main>
