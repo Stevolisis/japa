@@ -41,13 +41,13 @@ export default function Header({page}){
         </div>
 
         {menuStatus &&
-          <div className="z-20 absolute right-2 top-24 text-bgPrimary font-medium bg-bgSecondary p-7 pt-10 w-[170px] rounded-md text-[13px]">
+          <div className="z-20 absolute right-2 top-24 text-bgPrimary font-medium bg-bgSecondary p-7 pt-10 w-[200px] rounded-md text-[13px]">
             <Link href='/' className="block">Home</Link>
             <Link href='/' className="block my-3 ">Jobs</Link>
             <Link href='/' className="block my-3 ">Courses</Link>
             <Link href='/' className="block my-3 ">Blog</Link>
-            <Link href='/' className="block mt-3 py-2 px-3 -mx-1 text-center bg-bgPrimary text-bgSecondary rounded">Sign Up</Link>
-            <Link href='/' className="block mt-3 py-2 px-3 -mx-1 text-center bg-bgPrimary text-bgSecondary rounded">Sign In</Link>
+            <Link href='/sign_up' className="block mt-3 py-2 px-3 -mx-1 text-center bg-bgPrimary text-bgSecondary rounded">Sign Up</Link>
+            <Link href='/sign_in' className="block mt-3 py-2 px-3 -mx-1 text-center bg-bgPrimary text-bgSecondary rounded">Sign In</Link>
           </div>
         }
 
