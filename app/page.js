@@ -14,17 +14,17 @@ export default function Home() {
   console.log(search);
   const roles = ['Front End Developer','UI/UX Designer','Developers','Graphic Designer','SQL Database Administrator','AI Expert','Data Analyst','Cyber Security Expert','Content Creator'];
   const openings = [
-    {role:'UI/UX Designer at MTN',type:'Remote',logo:'http://localhost:3000/mtn.png',description:'We are currentky seeking to hire an experienced UI/UX Designer with an extensive and proven  experience who can work in high...'},
-    {role:'Web Developer at MTN',type:'Remote',logo:'http://localhost:3000/mtn.png',description:'We are currentky seeking to hire an experienced Web Developer with an extensive and proven  experience who can work in high...'},
-    {role:'Mobile Developer at MTN',type:'Remote',logo:'http://localhost:3000/mtn.png',description:'We are currentky seeking to hire an experienced Mobile Developer with an extensive and proven  experience who can work in high...'},
+    {role:'UI/UX Designer at MTN',type:'Remote',logo:'https://japa-steel.vercel.app/mtn.png',description:'We are currentky seeking to hire an experienced UI/UX Designer with an extensive and proven  experience who can work in high...'},
+    {role:'Web Developer at MTN',type:'Remote',logo:'https://japa-steel.vercel.app/mtn.png',description:'We are currentky seeking to hire an experienced Web Developer with an extensive and proven  experience who can work in high...'},
+    {role:'Mobile Developer at MTN',type:'Remote',logo:'https://japa-steel.vercel.app/mtn.png',description:'We are currentky seeking to hire an experienced Mobile Developer with an extensive and proven  experience who can work in high...'},
   ];
   const blog = [
-    {img:'http://localhost:3000/splash1.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
-    {img:'http://localhost:3000/splash2.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
-    {img:'http://localhost:3000/splash3.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
-    {img:'http://localhost:3000/splash4.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
-    {img:'http://localhost:3000/splash6.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
-    {img:'http://localhost:3000/splash7.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
+    {img:'https://japa-steel.vercel.app/splash1.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
+    {img:'https://japa-steel.vercel.app/splash2.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
+    {img:'https://japa-steel.vercel.app/splash3.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
+    {img:'https://japa-steel.vercel.app/splash4.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
+    {img:'https://japa-steel.vercel.app/splash6.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
+    {img:'https://japa-steel.vercel.app/splash7.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
   ];
 
 
@@ -39,7 +39,7 @@ export default function Home() {
 
         <div className="px-9 sm:px-7 md:px-0 py-24 text-bgPrimary h-auto sm:h-[80vh] flex justify-center items-center flex-col bg-slate-500" 
           style={{backgroundImage:`linear-gradient(45deg,rgba(100,100,100,0.2),rgba(100,100,100,0.2)),
-          url(http://localhost:3000/splash5.jpg)`,backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}>
+          url(https://japa-steel.vercel.app/splash5.jpg)`,backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}>
           
           <div className="pb-5">
             <h1 className="text-3xl sm:text-4xl">Find your dream job!</h1>
@@ -107,7 +107,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center items-center flex-col">
             <div>
-              <Image src='http://localhost:3000/jointhands.webp' alt='patnership' 
+              <Image src='https://japa-steel.vercel.app/jointhands.webp' alt='patnership' 
                 width={250} height={220} className="-mt-20"/>
             </div>
             <div>
@@ -158,13 +158,13 @@ export default function Home() {
             <div><p className="text-sm">Connect with japa</p></div>
             <div className="flex gap-4 items-center">
               <Link href='#'>
-                <Image src='http://localhost:3000/instagram.png' alt="instagram" width={30} height={30}/>
+                <Image src='https://japa-steel.vercel.app/instagram.png' alt="instagram" width={30} height={30}/>
               </Link>
               <Link href='#'>
-                <Image src='http://localhost:3000/linkedin.png' alt="linkedin" width={30} height={30}/>
+                <Image src='https://japa-steel.vercel.app/linkedin.png' alt="linkedin" width={30} height={30}/>
               </Link>
               <Link href='#'>
-                <Image src='http://localhost:3000/x.png' alt="twitter" width={34} height={34}/>
+                <Image src='https://japa-steel.vercel.app/x.png' alt="twitter" width={34} height={34}/>
               </Link>
             </div>
           </div>
