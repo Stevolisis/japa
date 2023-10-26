@@ -125,26 +125,26 @@ export default function Home() {
         </div>
 
 
-        <footer className="px-14 pt-10 pb-16 border-b-8 border-b-pink-500  border-t-2 border-t-gray-200">
-          <div className="flex flex-col sm:flex-row justify-between pb-16">
+        <footer className="px-7 sm:px-14 pt-10 pb-16 border-b-8 border-b-pink-500  border-t-2 border-t-gray-200">
+          <div className="flex flex-col sm:flex-row justify-between pb-10 sm:pb-16">
             <div>
               <h1 className="text-bgSecondary text-2xl font-extrabold">JAPA</h1>
             </div>
-            <div>
+            <div className="mt-5 sm:mt-0">
               <div><h4 className="font-semibold text-sm">Networks</h4></div>
               <div className="text-xs flex flex-col gap-2 pt-2">
                 <Link href='#'>About Us</Link>
                 <Link href='#'>Contact Us</Link>
               </div>
             </div>
-            <div>
+            <div className="mt-5 sm:mt-0">
               <div><h4 className="font-semibold text-sm">Jobs</h4></div>
               <div className="text-xs flex flex-col gap-2 pt-2">
                 <Link href='#'>Remote Job Marketplace</Link>
                 <Link href='#'>Training Programs</Link>
               </div>
             </div>
-            <div>
+            <div className="mt-5 sm:mt-0">
               <div><h4 className="font-semibold text-sm">Resources</h4></div>
               <div className="text-xs flex flex-col gap-2 pt-2">
                 <Link href='#'>Training Programs</Link>
