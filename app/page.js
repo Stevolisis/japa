@@ -17,7 +17,7 @@ export default function Home() {
       return false;
     }
   });
-  const [userInfo, setUserInfo] = useState({});
+  const [userInfo, setUserInfo] = useState(undefined);
   const roles = ['Front End Developer','UI/UX Designer','Developers','Graphic Designer','SQL Database Administrator','AI Expert','Data Analyst','Cyber Security Expert','Content Creator'];
   const openings = [
     {role:'UI/UX Designer at MTN',type:'Remote',logo:'https://japa-steel.vercel.app/mtn.png',description:'We are currentky seeking to hire an experienced UI/UX Designer with an extensive and proven  experience who can work in high...'},
