@@ -28,24 +28,33 @@ export default function LogIn() {
 
   function handleSubmit(e){
     e.preventDefault();
+    setLoading(true);
     axios.post('https://nice-story-production.up.railway.app/api/v1/auth/login',{
       email:email,
       password:password,
     })
     .then(res=>{
       console.log(res);
-      Toast.fire({
-        icon: 'success',
-        title: 'Log In Successful'
-      });
-      router.push('/', undefined, { shallow: true });
+      const data = res.data;
+      if(data.succeeded === true){
+        Toast.fire({
+          icon: 'success',
+          title: data.message
+        });    
+        router.push('/', undefined, { shallow: true });
+      }else{
+
+      }
+
     }).catch(err=>{
       console.log(err);
       Toast.fire({
         icon: 'error',
         title: 'Error Occured!'
       });
-    })
+    }).finally(fin=>{
+      setLoading(false);
+    });
   }
 
   return (
@@ -102,7 +111,7 @@ export default function LogIn() {
             <p className='text-right pt-1'><Link href='#' className='text-bgSecondary font-medium'>Forgot Password?</Link></p>
           </div>
   
-          <button className='bg-bgSecondary text-bgPrimary w-full mt-7 py-3 rounded-[5px] px-4 font-semibold'>Log In</button>
+          <button className={`bg-bgSecondary text-bgPrimary w-full mt-5 py-3 rounded-[5px] px-4 font-semibold ${loading && 'opacity-30'}`} disabled={loading ? true : false}>Log In</button>
   
         </form>
   

@@ -58,7 +58,7 @@ export default function SignUp() {
       toast.addEventListener('mouseleave', Swal.resumeTimer)
     },
     customClass:'toaster'
-  })
+  });
 
   function handleSubmit(e){
     e.preventDefault();
