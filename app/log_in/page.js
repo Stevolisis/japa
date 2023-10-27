@@ -3,13 +3,15 @@ import Header from '@/components/Header';
 import axios from 'axios';
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 
 export default function LogIn() {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
-
+  const [loading,setLoading] = useState(false);
+  const router = useRouter();
 
   const Toast = Swal.mixin({
     toast: true,
@@ -35,7 +37,8 @@ export default function LogIn() {
       Toast.fire({
         icon: 'success',
         title: 'Log In Successful'
-    });
+      });
+      router.push('/', undefined, { shallow: true });
     }).catch(err=>{
       console.log(err);
       Toast.fire({

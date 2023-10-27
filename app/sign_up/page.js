@@ -10,6 +10,7 @@ import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import Header from '@/components/Header';
+import { useRouter } from 'next/navigation';
 
 export default function SignUp() {
   const [first_name,setFirst_name] = useState('');
@@ -23,6 +24,8 @@ export default function SignUp() {
   const [validEmail,setValidemail] = useState(true);
   const [showPassword,setShowpassword] = useState(false);
   const [validpassword,setValidpassword] = useState(false);
+  const [loading,setLoading] = useState(false);
+  const router = useRouter();
 
   function isValidEmail(e) {
     setEmail(e.target.value);
@@ -59,7 +62,8 @@ export default function SignUp() {
 
   function handleSubmit(e){
     e.preventDefault();
-    if(isValidEmail && isValidatePassword){
+    if(isValidEmail && isValidatePassword && phone_number.length === 13){
+      setLoading(true);
       axios.post('https://nice-story-production.up.railway.app/api/v1/auth/register',{
         firstName:first_name,
         lastName:last_name,
@@ -74,14 +78,18 @@ export default function SignUp() {
         Toast.fire({
           icon: 'success',
           title: 'Signed Up Successfully'
-      });
+        });
+        router.push('/log_in', undefined, { shallow: true });
       }).catch(err=>{
         console.log(err);
         Toast.fire({
           icon: 'error',
           title: 'Error Occured!'
         });
-      })
+      }).finally(fin=>{
+        console.log('finnnnnnnnnn',fin)
+        setLoading(false);
+      });
     }
   }
 
@@ -165,14 +173,14 @@ export default function SignUp() {
               className='w-full'
               defaultMask='... ... ....'
             />
-              {/* <div className='flex items-center mt-1 text-[10px] text-red-600'>
-                {phone_number &&
+              <div className='flex items-center mt-1 text-[10px] text-red-600'>
+                {phone_number && phone_number.length < 13 &&
                   <>
                     <span className='mr-1'><PiWarningFill/></span>
                     <p>Your Phone Number must be unique</p>
                   </>
                 }
-              </div> */}
+              </div>
           </div>
   
           <div className={`${validphone_number ? 'pt-5' : 'pt-1'} flex justify-between gap-2`}>
@@ -225,7 +233,7 @@ export default function SignUp() {
             </div>
           </div>
   
-          <button className='bg-bgSecondary text-bgPrimary w-full mt-5 py-3 rounded-[5px] px-4 font-semibold'>Sign Up</button>
+          <button className={`bg-bgSecondary text-bgPrimary w-full mt-5 py-3 rounded-[5px] px-4 font-semibold ${loading && 'opacity-30'}`} disabled={loading ? true : false}>Sign Up</button>
   
         </form>
   
