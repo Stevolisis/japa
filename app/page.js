@@ -170,7 +170,7 @@ export default function Home() {
                 <Image src='https://japa-steel.vercel.app/instagram.png' alt="instagram" width={30} height={30}/>
               </Link>
               <Link href='#'>
-                <Image src='https://japa-steel.vercel.app/linkedin.png' alt="linkedin" width={30} height={30}/>
+                <Image src='https://japa-steel.vercel.app/Linkedin.png' alt="linkedin" width={30} height={30}/>
               </Link>
               <Link href='#'>
                 <Image src='https://japa-steel.vercel.app/x.png' alt="twitter" width={34} height={34}/>
