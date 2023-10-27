@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 
 export default function Home() {
+  const [menuStatus,setMenuStatus]=useState(false);
   const [ auth, setAuth ] = useState(false);
   const [userInfo, setUserInfo] = useState(undefined);
   const router = useRouter();
@@ -46,7 +47,8 @@ export default function Home() {
   function signOut(){
     deleteCookie('token');
     localStorage.removeItem('user');
-    router.push('/', undefined, { shallow: true });
+    setAuth(false);
+    setMenuStatus(false);
     Toast.fire({
       icon: 'success',
       title: 'Signed Out Successfully'
@@ -69,7 +71,7 @@ export default function Home() {
 
   return (
     <>
-      <Header page='home' auth={auth} userInfo={userInfo} signOut={signOut}/>
+      <Header page='home' auth={auth} userInfo={userInfo} signOut={signOut} menuStatus={menuStatus} setMenuStatus={setMenuStatus}/>
       <main>
 
         <div className="px-9 sm:px-7 md:px-0 py-24 text-bgPrimary h-auto sm:h-[80vh] flex justify-center items-center flex-col bg-slate-500" 
