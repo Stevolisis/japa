@@ -3,7 +3,7 @@ import { useState } from "react";
 import { IoMdClose } from 'react-icons/io'
 import { FiMenu } from 'react-icons/fi';
 
-export default function Header({page,auth,userInfo}){
+export default function Header({page,auth,userInfo,signOut}){
   const [menuStatus,setMenuStatus]=useState(false);
 
   return(
@@ -55,13 +55,14 @@ export default function Header({page,auth,userInfo}){
           <div className="z-20 absolute right-2 top-24 text-bgPrimary font-medium bg-bgSecondary p-7 pt-10 w-[200px] rounded-md text-[13px]">
             { auth &&
               <>
-                <div href='/sign_up' className="block mt-3 mb-3 py-2 px-3 -mx-1 text-center bg-bgPrimary text-bgSecondary rounded">{userInfo.firstName + ' ' + userInfo.lastName}</div>
+                <div className="block mt-3 mb-3 py-2 px-3 -mx-1 text-center bg-bgPrimary text-bgSecondary rounded">{userInfo.firstName + ' ' + userInfo.lastName}</div>
               </>
             }
             <Link href='/' className="block sm:hidden"> Home </Link>
             <Link href='/' className="block sm:hidden my-3 "> Jobs </Link>
             <Link href='/' className="block sm:hidden my-3 "> Courses </Link>
             <Link href='/' className="block sm:hidden my-3 "> Blog </Link>
+            <div onClick={()=>signOut()} className="cursor-pointer block mt-3 mb-3 py-2 px-3 -mx-1 text-center bg-red-600 text-bgPrimary rounded">Sign Out</div>
             { !auth &&
               <>
                 <Link href='/sign_up' className="block mt-3 py-2 px-3 -mx-1 text-center bg-bgPrimary text-bgSecondary rounded">Sign Up</Link>
