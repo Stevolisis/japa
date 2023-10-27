@@ -26,7 +26,7 @@ export default function LogIn() {
     },
     className:'w-[100px]'
   });
-
+  // Mikeidowu1.
   function handleSubmit(e){
     e.preventDefault();
     setLoading(true);
@@ -42,11 +42,15 @@ export default function LogIn() {
           icon: 'success',
           title: data.message
         });    
-        setCookie('token', data.token, { maxAge: 60 * 60 * 24 * 30, httpOnly: true, secure: true, sameSite: 'strict', path: '/' });
+        setCookie('token', data.token, { maxAge: 60 * 60 * 24 * 30, httpOnly: false, secure: true, sameSite: 'strict', path: '/' });
+        localStorage.setItem('user', JSON.stringify({firstName:data.data.firstName,lastName:data.data.lastName}));
         router.push('/', undefined, { shallow: true });
         
       }else{
-
+        Toast.fire({
+          icon: 'error',
+          title: 'Error Occured!'
+        });
       }
 
     }).catch(err=>{

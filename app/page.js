@@ -6,7 +6,7 @@ import RolesMarquee from "@/components/RolesMarquee"
 import Image from "next/image";
 import Link from "next/link";
 import { BsArrowRightShort } from "react-icons/bs"
-
+import { getCookie } from 'cookies-next';
 
 export default function Home() {
   const roles = ['Front End Developer','UI/UX Designer','Developers','Graphic Designer','SQL Database Administrator','AI Expert','Data Analyst','Cyber Security Expert','Content Creator'];
@@ -23,7 +23,7 @@ export default function Home() {
     {img:'https://japa-steel.vercel.app/splash6.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
     {img:'https://japa-steel.vercel.app/splash7.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
   ];
-
+  console.log('ussssssssseeeeerr',getCookie('token'));
 
 
 
