@@ -7,8 +7,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsArrowRightShort } from "react-icons/bs"
 import { getCookie } from 'cookies-next';
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [ auth ] = useState(()=>{
+    if(getCookie('token')&&getCookie('token')!==''){
+      return true;
+    }else{
+      return false;
+    }
+  });
+  const [userInfo, setUserInfo] = useState({});
   const roles = ['Front End Developer','UI/UX Designer','Developers','Graphic Designer','SQL Database Administrator','AI Expert','Data Analyst','Cyber Security Expert','Content Creator'];
   const openings = [
     {role:'UI/UX Designer at MTN',type:'Remote',logo:'https://japa-steel.vercel.app/mtn.png',description:'We are currentky seeking to hire an experienced UI/UX Designer with an extensive and proven  experience who can work in high...'},
@@ -23,10 +32,14 @@ export default function Home() {
     {img:'https://japa-steel.vercel.app/splash6.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
     {img:'https://japa-steel.vercel.app/splash7.jpg',title:'Key Factors to Consider When Job Hunting in 2023'},
   ];
-  console.log('ussssssssseeeeerr',getCookie('token'));
 
 
-
+  useEffect(() => {
+    const data = localStorage.getItem('user');
+    if (data) {
+      setUserInfo(JSON.parse(data));
+    }
+  }, []);
 
 
   return (
