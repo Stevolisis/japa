@@ -2,7 +2,7 @@ import { BsArrowRightShort,BsArrowLeftShort } from "react-icons/bs"
 import Link from "next/link";
 
 export default function BlogSlide({data}){
-    const id=''+Math.random();
+    const id=123;
 
     const nextslide=()=>{
         let element=document.getElementById(`${id}`)||'';

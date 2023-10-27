@@ -10,13 +10,7 @@ import { getCookie } from 'cookies-next';
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [ auth ] = useState(()=>{
-    if(getCookie('token')&&getCookie('token')!==''){
-      return true;
-    }else{
-      return false;
-    }
-  });
+  const [ auth, setAuth ] = useState(false);
   const [userInfo, setUserInfo] = useState(undefined);
   const roles = ['Front End Developer','UI/UX Designer','Developers','Graphic Designer','SQL Database Administrator','AI Expert','Data Analyst','Cyber Security Expert','Content Creator'];
   const openings = [
@@ -38,6 +32,11 @@ export default function Home() {
     const data = localStorage.getItem('user');
     if (data) {
       setUserInfo(JSON.parse(data));
+    }
+    if(getCookie('token')&&getCookie('token')!==''){
+      setAuth(true);
+    }else{
+      setAuth(false);
     }
   }, []);
 
