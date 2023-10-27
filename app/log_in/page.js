@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
+import { setCookie } from 'cookies-next';
 
 export default function LogIn() {
   const [email,setEmail] = useState('');
@@ -41,7 +42,9 @@ export default function LogIn() {
           icon: 'success',
           title: data.message
         });    
+        setCookie('token', data.token, { maxAge: 60 * 60 * 24 * 30, httpOnly: true, secure: true, sameSite: 'strict', path: '/' });
         router.push('/', undefined, { shallow: true });
+        
       }else{
 
       }
