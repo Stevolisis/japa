@@ -30,13 +30,19 @@ export default function Header({page,auth,userInfo}){
         </div>
 
         <div className="hidden sm:flex gap-3">
-            <Link href='/sign_up' className="font-semibold text-xs py-2 px-9 md:px-12 border border-gray-700 rounded-[4px]">Sign Up</Link>
-            <Link href='/log_in' className="font-semibold text-sm py-2 px-9 md:px-12 rounded-[4px] bg-bgSecondary text-bgPrimary">Sign In</Link>
+          { auth ?
+            <div onClick={()=>setMenuStatus(!menuStatus)}><p className="bg-bgSecondary rounded-full text-bgPrimary w-8 h-8 cursor-pointer flex justify-center items-center">{userInfo&&userInfo?.firstName.charAt(0)}</p></div>
+            :
+              <>
+                <Link href='/sign_up' className="font-semibold text-xs py-2 px-9 md:px-12 border border-gray-700 rounded-[4px]">Sign Up</Link>
+                <Link href='/log_in' className="font-semibold text-sm py-2 px-9 md:px-12 rounded-[4px] bg-bgSecondary text-bgPrimary">Sign In</Link>
+              </>
+          }
         </div>
 
         <div className="block sm:hidden">
         { auth ?
-          <div onClick={()=>setMenuStatus(!menuStatus)}><p className="bg-bgSecondary rounded-full text-bgPrimary w-8 h-8 cursor-pointer flex justify-center items-center">{userInfo&&userInfo.firstName.charAt(0)}</p></div>
+          <div onClick={()=>setMenuStatus(!menuStatus)}><p className="bg-bgSecondary rounded-full text-bgPrimary w-8 h-8 cursor-pointer flex justify-center items-center">{userInfo&&userInfo?.firstName.charAt(0)}</p></div>
           :
           (menuStatus ? 
           <IoMdClose size={22} onClick={()=>setMenuStatus(!menuStatus)} className='cursor-pointer'/> 
@@ -52,10 +58,10 @@ export default function Header({page,auth,userInfo}){
                 <div href='/sign_up' className="block mt-3 mb-3 py-2 px-3 -mx-1 text-center bg-bgPrimary text-bgSecondary rounded">{userInfo.firstName + ' ' + userInfo.lastName}</div>
               </>
             }
-            <Link href='/' className="block">Home</Link>
-            <Link href='/' className="block my-3 ">Jobs</Link>
-            <Link href='/' className="block my-3 ">Courses</Link>
-            <Link href='/' className="block my-3 ">Blog</Link>
+            <Link href='/' className="block sm:hidden"> Home </Link>
+            <Link href='/' className="block sm:hidden my-3 "> Jobs </Link>
+            <Link href='/' className="block sm:hidden my-3 "> Courses </Link>
+            <Link href='/' className="block sm:hidden my-3 "> Blog </Link>
             { !auth &&
               <>
                 <Link href='/sign_up' className="block mt-3 py-2 px-3 -mx-1 text-center bg-bgPrimary text-bgSecondary rounded">Sign Up</Link>
