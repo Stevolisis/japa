@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <>
-      <Header page='home'/>
+      <Header page='home' auth={auth} userInfo={userInfo}/>
       <main>
 
         <div className="px-9 sm:px-7 md:px-0 py-24 text-bgPrimary h-auto sm:h-[80vh] flex justify-center items-center flex-col bg-slate-500" 
